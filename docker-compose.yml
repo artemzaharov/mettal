@@ -25,6 +25,7 @@ services:
     command: "gunicorn   --bind 0.0.0.0:80 metall.wsgi"
     volumes:
       - "./media:/app/media"
+      - "./static:/app/static"
     networks:
           - application
 
@@ -64,7 +65,6 @@ services:
         depends_on:
             - db
             - server
-            - pgadmin
         networks:
             - application
     
