@@ -1,0 +1,75 @@
+{% load static wagtailcore_tags wagtailuserbar %}
+
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8" />
+        <title>
+            {% block title %}
+            {% if page.seo_title %}{{ page.seo_title }}{% else %}{{ page.title }}{% endif %}
+            {% endblock %}
+            {% block title_suffix %}
+            {% wagtail_site as current_site %}
+            {% if current_site and current_site.site_name %}- {{ current_site.site_name }}{% endif %}
+            {% endblock %}
+        </title>
+        {% if page.search_description %}
+        <meta name="description" content="{{ page.search_description }}" />
+        {% endif %}
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+
+        {# Force all links in the live preview panel to be opened in a new tab #}
+        {% if request.in_preview_panel %}
+        <base target="_blank">
+        {% endif %}
+
+        {# Global stylesheets #}
+          <!-- Bootstrap -->
+        <link rel="stylesheet" href="{% static 'plugins/bootstrap/bootstrap.min.css' %}">
+        <!-- FontAwesome -->
+        <link rel="stylesheet" href="{% static 'plugins/fontawesome/css/all.min.css' %}">
+  <!-- Animation -->
+        <link rel="stylesheet" href="{% static 'plugins/animate-css/animate.css' %}">
+        <!-- slick Carousel -->
+        <link rel="stylesheet" href="{% static 'plugins/slick/slick.css' %}">
+        <link rel="stylesheet" href="{% static 'plugins/slick/slick-theme.css' %}">
+        <!-- Colorbox -->
+        <link rel="stylesheet" href="{% static 'plugins/colorbox/colorbox.css' %}">
+        <!-- Template styles-->
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+        {% block extra_css %}
+        {# Override this in templates to add extra stylesheets #}
+        {% endblock %}
+    </head>
+
+    <body class="{% block body_class %}{% endblock %}">
+        {% wagtailuserbar %}
+
+        {% block content %}{% endblock %}
+
+        {# Global javascript #}
+        <script type="text/javascript" src="{% static 'js/metall.js' %}"></script>
+
+          <!-- initialize jQuery Library -->
+        <script src="{% static 'plugins/jQuery/jquery.min.js' %}"></script>
+        <!-- Bootstrap jQuery -->
+        <script src="{% static 'plugins/bootstrap/bootstrap.min.js' %}" defer></script>
+        <!-- Slick Carousel -->
+        <script src="{% static 'plugins/slick/slick.min.js' %}"></script>
+        <script src="{% static 'plugins/slick/slick-animation.min.js' %}"></script>
+        <!-- Color box -->
+        <script src="{% static 'plugins/colorbox/jquery.colorbox.js' %}"></script>
+        <!-- shuffle -->
+        <script src="{% static 'plugins/shuffle/shuffle.min.js' %}" defer></script>
+
+
+
+        <!-- Template custom -->
+        <script src="{% static 'js/script.js' %}"></script>
+
+        {% block extra_js %}
+        {# Override this in templates to add extra javascript #}
+        {% endblock %}
+    </body>
+</html>
