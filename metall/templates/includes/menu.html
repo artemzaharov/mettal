@@ -2,57 +2,14 @@
 
 
 <!-- phone round-->
-<section class="call-buton"><a class="cc-calto-action-ripple" href="tel:+79522721417"><i class="fa fa-phone"></i><span class="num"></span>
-</a>
-</section>
-<!-- phone round end-->
 
-<!--/ Topbar end -->
-<!-- Header start -->
 <header id="header" class="header-one">
-<div class="bg-white">
-<div class="container">
-<div class="logo-area">
-    <div class="row align-items-center">
-      <div class="logo col-lg-3 text-center text-lg-left mb-3 mb-md-5 mb-lg-0">
-          <a class="d-block" href="index.html">
-            <img loading="lazy" src="" alt="Братья Юсуповы ">
-          </a>
-      </div><!-- logo end -->
+  <div class="bg-white">
+  <div class="container">
 
-      <div class="col-lg-9 header-right">
-          <ul class="top-info-box">
-            <li>
-              <div class="info-box">
-                <div class="info-box-content">
-                    <p class="info-box-title">Позвонить нам</p>
-                    <p class="info-box-subtitle">(+7) 952 272 1417</p>
-                </div>
-              </div>
-            </li>
-            <li>
-              <div class="info-box">
-                <div class="info-box-content">
-                    <p class="info-box-title">Email для связи</p>
-                    <p class="info-box-subtitle">office@Constra.com</p>
-                </div>
-              </div>
-            </li>
-            <li class="last">
-              <div class="info-box last">
-                <div class="info-box-content">
-                 <p class="info-box-title"> <i class="fas fa-map-marker-alt"></i> Адрес</p>
-                    <p class="info-box-subtitle">№ 453454356432253453</p>
-                </div>
-              </div>
-            </li>
-            <li class="header-get-a-quote">
-              <a class="btn btn-primary" href="contact.html">Оставить заявку</a>
-            </li>
-          </ul><!-- Ul end -->
-      </div><!-- header right end -->
-    </div><!-- logo area end -->
-
+{% for block in page.header.header %}
+{% include_block block  %}
+{% endfor %}
 </div><!-- Row end -->
 </div><!-- Container end -->
 </div>
