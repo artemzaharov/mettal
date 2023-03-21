@@ -57,4 +57,6 @@ RUN python manage.py collectstatic --noinput --clear
 #   PRACTICE. The database should be migrated manually or using the release
 #   phase facilities of your hosting platform. This is used only so the
 #   Wagtail instance can be started with a simple "docker run" command.
-CMD set -xe; python manage.py migrate --noinput; gunicorn metall.wsgi:application
+RUN python manage.py makemigrations home;
+
+CMD set -xe; python manage.py migrate --noinput; gunicorn   --bind 0.0.0.0:80  metall.wsgi:application

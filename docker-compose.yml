@@ -22,7 +22,7 @@ services:
       POSTGRES_DB:  service_db
       POSTGRES_HOST: postgresdb
       POSTGRES_PORT: 5432
-    command: "gunicorn   --bind 0.0.0.0:80 metall.wsgi"
+    # command: "gunicorn  --bind 0.0.0.0:80 metall.wsgi:application"
     volumes:
       - "./media:/app/media"
       - "./static:/app/static"
