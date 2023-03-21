@@ -1,0 +1,12 @@
+{% load i18n wagtailcore_tags %}
+
+
+<div class="accordion accordion-group" id="our-values-accordion">
+
+
+    {% for block in page.metall %}
+    {% include_block block  %}
+    {% endfor %}  
+
+
+</div>

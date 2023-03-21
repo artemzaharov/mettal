@@ -1,0 +1,14 @@
+{% load i18n wagtailcore_tags %}
+
+<footer id="footer" class="footer bg-overlay">
+    <div class="footer-main">
+      <div class="container">
+
+        {% for block in page.footer.footer %}
+        {% include_block block  %}
+        {% endfor %}
+      </div>
+      <!-- Container end -->
+    </div>
+
+  </footer>

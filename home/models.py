@@ -13,7 +13,7 @@ class Menu(models.Model):
     ], use_json_field=True)
 
     def __str__(self):
-        return 'Menu'
+        return 'Меню'
 
 
 @register_snippet
@@ -23,7 +23,16 @@ class Header(models.Model):
     ], use_json_field=True)
 
     def __str__(self):
-        return 'Header'
+        return 'Верхушка'
+
+@register_snippet
+class Footer(models.Model):
+    footer = StreamField([        
+        ('footer', blocks.FooterBlock())
+    ], use_json_field=True)
+
+    def __str__(self):
+        return 'Подвал'
 
 class HomePage(Page):
     header = models.ForeignKey(
@@ -32,8 +41,18 @@ class HomePage(Page):
     menu = models.ForeignKey(
         'Menu', on_delete=models.SET_NULL, null=True, blank=True, related_name='+'
     )
+    footer = models.ForeignKey(
+        'Footer', on_delete=models.SET_NULL, null=True, blank=True, related_name='+'
+    )
+
+    metall = StreamField([
+        ('metall', blocks.MetallBlock())
+    ], null=True, blank=True)
+
 
     content_panels = Page.content_panels + [
         FieldPanel("header"),
         FieldPanel("menu"),
+        FieldPanel("footer"),
+        FieldPanel("metall"),
     ]

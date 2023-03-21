@@ -4,316 +4,136 @@
 {% load i18n wagtailcore_tags %}
 {% load static wagtailuserbar %}
 {% block content %}
-<div class="body-inner">
-  {% block header %}
-  {% include "includes/menu.html" %}
-{% endblock header %}
-<!--/ Header end -->
-<section id="main-container" class="main-container">
+  <div class="body-inner">
+    {% block header %}
+      {% include "includes/menu.html" %}
+    {% endblock header %}
+    <!--/ Header end -->
+    <section id="main-container" class="main-container">
+      <div class="container">
+        <div class="row text-center">
+          <div class="col-12">
+            <br>
+            <h2 class="section-title">Вывоз лома в СПБ</h2>
+            <h3 class="section-sub-title">Цены</h3>
+          </div>
+        </div>
+        <!--/ Title row end -->
+        {% block metall %}
+          {% include "includes/metall.html" %}
+        {% endblock metall %}
+        <!--/ Content row end -->
+      </div>
+      <br>
+      <!-- Conatiner end -->
+      <section id="main-container" class="main-container">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-4 mt-5 mt-lg-0">
+              <h3 class="column-title mrt-0">Отзывы</h3>
+              <p>
+                Компании, которые занимаются металлом, могут иметь различные профили деятельности, в зависимости от того, какой вид металла они производят или обрабатывают. Например, некоторые компании могут заниматься добычей и производством металлических руд, тогда как другие могут специализироваться на переработке металлических материалов, таких как сталь, алюминий или медь.
+              </p>
+            </div>
+            <div class="col-lg-8">
+              <div id="page-slider" class="page-slider small-bg">
+                <div class="item">
+                  <img loading="lazy"
+                       class="img-fluid"
+                       src="{% static 'images/slider-main/bg3.jpg' %}"
+                       alt="project-image"/>
+                </div>
+                <div class="item">
+                  <img loading="lazy"
+                       class="img-fluid"
+                       src="{% static 'images/slider-main/bg2.jpg' %}"
+                       alt="project-image"/>
+                </div>
+              </div>
+              <!-- Page slider end -->
+            </div>
+            <!-- Slider col end -->
+          </div>
+          <!-- Row end -->
+        </div>
+        <!-- Conatiner end -->
+      </section>
+      <!-- Main container end -->
+    </div>
+    <!-- Page slider end -->
+  </div>
+
+  <section id="ts-service-area" class="ts-service-area pb-0">
     <div class="container">
       <div class="row text-center">
         <div class="col-12">
           <br>
-          <h2 class="section-title">Вывоз лома в СПБ</h2>
-          <h3 class="section-sub-title">Цены</h3>
+          <h2 class="section-title">We Are Specialists In</h2>
+          <h3 class="section-sub-title">What We Do</h3>
+          <div style="position:relative;overflow:hidden;">
+            <a href="https://yandex.ru/maps/2/saint-petersburg/?utm_medium=mapframe&utm_source=maps"
+               style="color:#eee;
+                      font-size:12px;
+                      position:absolute;
+                      top:0px">Санкт‑Петербург</a><a href="https://yandex.ru/maps/2/saint-petersburg/house/ulitsa_turku_13k1/Z0kYdQ9nTkMOQFtjfXR3d3lhZg==/?ll=30.387769%2C59.866522&utm_medium=mapframe&utm_source=maps&z=17.21"
+           style="color:#eee;
+                  font-size:12px;
+                  position:absolute;
+                  top:14px">Улица Турку, 13к1 — Яндекс Карты</a><iframe src="https://yandex.ru/map-widget/v1/?ll=30.387769%2C59.866522&mode=search&ol=geo&ouri=ymapsbm1%3A%2F%2Fgeo%3Fdata%3DCgg1NzQ0NTM5NRJJ0KDQvtGB0YHQuNGPLCDQodCw0L3QutGCLdCf0LXRgtC10YDQsdGD0YDQsywg0YPQu9C40YbQsCDQotGD0YDQutGDLCAxM9C6MSIKDSYa80EVUXdvQg%2C%2C&z=17.21"
+                width="560"
+                height="400"
+                frameborder="1"
+                allowfullscreen="true"
+                style="position:relative"></iframe>
+          </div>
+          <br>
         </div>
       </div>
-  
       <!--/ Title row end -->
-  
-      <div class="accordion accordion-group" id="our-values-accordion">
-        <div class="card">
-          <div class="card-header p-0 bg-transparent" id="headingOne">
-              <h2 class="mb-0">
-                <button class="btn btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                    Safety
-                </button>
-              </h2>
-          </div>
-        
-          <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#our-values-accordion">
-              <div class="card-body">
-                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.<br> 
-                3 wolf moon officia aute, non cupidata
-              </div>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-header p-0 bg-transparent" id="headingTwo">
-              <h2 class="mb-0">
-                <button class="btn btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                    Медь
-                </button>
-              </h2>
-          </div>
-          <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#our-values-accordion">
-              <div class="card-body">
-                  Стоимость 1000 р
-              </div>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-header p-0 bg-transparent" id="headingThree">
-              <h2 class="mb-0">
-                <button class="btn btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                    Integrity
-                </button>
-              </h2>
-          </div>
-          <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#our-values-accordion">
-              <div class="card-body">
-                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidata
-              </div>
-          </div>
-        </div>
     </div>
-      <!--/ Content row end -->
-    </div><!-- Conatiner end -->
-
-    <section id="main-container" class="main-container">
-      <div class="container">
-        <div class="row">
-            <div class="col-lg-6">
-              <h3 class="column-title">Who We Are</h3>
-              <p>when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin.</p>
-              <blockquote><p>Semporibus autem quibusdam et aut officiis debitis aut rerum est aut optio cumque nihil necessitatibus autemn ec tincidunt nunc posuere ut</p></blockquote>
-              <p>He lay on his armour-like  back, and if he lifted. ultrices ultrices sapien, nec tincidunt nunc posuere ut. Lorem ipsum dolor sit amet, consectetur adipiscing elit. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn’t anything embarrassing.</p>
-    
-            </div><!-- Col end -->
-    
-            <div class="col-lg-6 mt-5 mt-lg-0">
-              
-              <div id="page-slider" class="page-slider small-bg slick-initialized slick-slider"><button type="button" class="carousel-control left slick-arrow" aria-label="carousel-control" style=""><i class="fas fa-chevron-left"></i></button>
-    
-                  <div class="slick-list draggable"><div class="slick-track" style="opacity: 1; width: 1350px;"><div class="item slick-slide" style="background-image: url(&quot;images/slider-pages/slide-page1.jpg&quot;); width: 450px; position: relative; left: 0px; top: 0px; z-index: 998; opacity: 0; transition: opacity 600ms ease 0s;" data-slick-index="0" aria-hidden="true" tabindex="-1">
-                    <div class="container">
-                        <div class="box-slider-content">
-                          <div class="box-slider-text">
-                              <h2 class="box-slide-title">Leadership</h2>
-                          </div>    
-                        </div>
-                    </div>
-                  </div><div class="item slick-slide" style="background-image: url(&quot;images/slider-pages/slide-page2.jpg&quot;); width: 450px; position: relative; left: -450px; top: 0px; z-index: 998; opacity: 0; transition: opacity 600ms ease 0s;" data-slick-index="1" aria-hidden="true" tabindex="-1">
-                    <div class="container">
-                        <div class="box-slider-content">
-                          <div class="box-slider-text">
-                              <h2 class="box-slide-title">Relationships</h2>
-                          </div>    
-                        </div>
-                    </div>
-                  </div><div class="item slick-slide slick-current slick-active" style="background-image: url(&quot;images/slider-pages/slide-page3.jpg&quot;); width: 450px; position: relative; left: -900px; top: 0px; z-index: 999; opacity: 1;" data-slick-index="2" aria-hidden="false" tabindex="0">
-                    <div class="container">
-                        <div class="box-slider-content">
-                          <div class="box-slider-text">
-                              <h2 class="box-slide-title">Отзывы</h2>
-                          </div>    
-                        </div>
-                    </div>
-                  </div></div></div><!-- Item 1 end -->
-    
-                  <!-- Item 1 end -->
-    
-                  <!-- Item 1 end -->
-              <button type="button" class="carousel-control right slick-arrow" aria-label="carousel-control" style=""><i class="fas fa-chevron-right"></i></button></div><!-- Page slider end-->          
-            
-    
-            </div><!-- Col end -->
-        </div><!-- Content row end -->
-    
-      </div><!-- Container end -->
-    </section>  
-
-<div class="banner-carousel banner-carousel-1 mb-0">
-  <div class="banner-carousel-item" style="background-image:url({% static 'images/slider-main/bg1.jpg' %})">
-    <div class="slider-content">
-        <div class="container h-100">
-          <div class="row align-items-center h-100">
-              <div class="col-md-12 text-center">
-                {% comment %} <h2 class="slide-title" data-animation-in="slideInLeft">17 Years of excellence in</h2>
-                <h3 class="slide-sub-title" data-animation-in="slideInRight">Construction Industry</h3>
-                <p data-animation-in="slideInLeft" data-duration-in="1.2">
-                    <a href="services.html" class="slider btn btn-primary">Our Services</a>
-                    <a href="contact.html" class="slider btn btn-primary border">Contact Now</a>
-                </p> {% endcomment %}
-              </div>
-          </div>
-        </div>
-    </div>
-  </div>
-
-  <div class="banner-carousel-item" style="background-image:url({% static 'images/slider-main/bg2.jpg' %})">
-    <div class="slider-content text-left">
-        <div class="container h-100">
-          <div class="row align-items-center h-100">
-              <div class="col-md-12">
-                {% comment %} <h2 class="slide-title-box" data-animation-in="slideInDown">World Class Service</h2>
-                <h3 class="slide-title" data-animation-in="fadeIn">When Service Matters</h3>
-                <h3 class="slide-sub-title" data-animation-in="slideInLeft">Your Choice is Simple</h3>
-                <p data-animation-in="slideInRight">
-                    <a href="services.html" class="slider btn btn-primary border">Our Services</a>
-                </p> {% endcomment %}
-              </div>
-          </div>
-        </div>
-    </div>
-  </div>
-
-  <div class="banner-carousel-item" style="background-image:url({% static 'images/slider-main/bg1.jpg' %})">
-    <div class="slider-content text-right">
-        <div class="container h-100">
-          <div class="row align-items-center h-100">
-              <div class="col-md-12">
-                {% comment %} <h2 class="slide-title" data-animation-in="slideInDown">Meet Our Engineers</h2>
-                <h3 class="slide-sub-title" data-animation-in="fadeIn">We believe sustainability</h3>
-                <p class="slider-description lead" data-animation-in="slideInRight">We will deal with your failure that determines how you achieve success.</p>
-                <div data-animation-in="slideInLeft">
-                    <a href="contact.html" class="slider btn btn-primary" aria-label="contact-with-us">Get Free Quote</a>
-                    <a href="about.html" class="slider btn btn-primary border" aria-label="learn-more-about-us">Learn more</a>
-                </div> {% endcomment %}
-              </div>
-          </div>
-        </div>
-    </div>
-  </div>
-</div>
-
-{% comment %} <section class="call-to-action-box no-padding">
-  <div class="container">
-    <div class="action-style-box">
-        <div class="row align-items-center">
-          <div class="col-md-8 text-center text-md-left">
-              <div class="call-to-action-text">
-                <h3 class="action-title">Посмотреть отзывы на авито</h3>
-              </div>
-          </div><!-- Col end -->
-          <div class="col-md-4 text-center text-md-right mt-3 mt-md-0">
-              <div class="call-to-action-btn">
-                <a class="btn btn-dark" href="#">Перейти</a>
-              </div>
-          </div><!-- col end -->
-        </div><!-- row end -->
-    </div><!-- Action style box -->
-  </div><!-- Container end -->
-</section><!-- Action end -->
- {% endcomment %}
-
-
-
-
-<section class="subscribe no-padding">
-  <div class="container">
-    <div class="row">
+  </section>
+  <!-- Service end -->
+  <section class="subscribe no-padding">
+    <div class="container">
+      <div class="row">
         <div class="col-lg-4">
           <div class="subscribe-call-to-acton">
-              <h3>Can We Help?</h3>
-              <h4>(+9) 847-291-4353</h4>
+            <h3>Can We Help?</h3>
+            <h4>(+9) 847-291-4353</h4>
           </div>
-        </div><!-- Col end -->
-
+        </div>
+        <!-- Col end -->
         <div class="col-lg-8">
           <div class="ts-newsletter row align-items-center">
-              <div class="col-md-5 newsletter-introtext">
-                <h4 class="text-white mb-0">Newsletter Sign-up</h4>
-                <p class="text-white">Latest updates and news</p>
-              </div>
-
-              <div class="col-md-7 newsletter-form">
-                <form action="#" method="post">
-                    <div class="form-group">
-                      <label for="newsletter-email" class="content-hidden">Newsletter Email</label>
-                      <input type="email" name="email" id="newsletter-email" class="form-control form-control-lg" placeholder="Your your email and hit enter" autocomplete="off">
-                    </div>
-                </form>
-              </div>
-          </div><!-- Newsletter end -->
-        </div><!-- Col end -->
-
-    </div><!-- Content row end -->
-  </div>
-  <!--/ Container end -->
-</section>
-<!--/ subscribe end -->
-
-
-
-  <footer id="footer" class="footer bg-overlay">
-    <div class="footer-main">
-      <div class="container">
-        <div class="row justify-content-between">
-          <div class="col-lg-4 col-md-6 footer-widget footer-about">
-            <h3 class="widget-title">About Us</h3>
-            <img loading="lazy" width="200px" class="footer-logo" src="images/footer-logo.png" alt="Constra">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor inci done idunt ut
-              labore et dolore magna aliqua.</p>
-            <div class="footer-social">
-              <ul>
-                <li><a href="https://facebook.com/themefisher" aria-label="Facebook"><i
-                      class="fab fa-facebook-f"></i></a></li>
-                <li><a href="https://twitter.com/themefisher" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                </li>
-                <li><a href="https://instagram.com/themefisher" aria-label="Instagram"><i
-                      class="fab fa-instagram"></i></a></li>
-                <li><a href="https://github.com/themefisher" aria-label="Github"><i class="fab fa-github"></i></a></li>
-              </ul>
-            </div><!-- Footer social end -->
-          </div><!-- Col end -->
-
-          <div class="col-lg-4 col-md-6 footer-widget mt-5 mt-md-0">
-            <h3 class="widget-title">Working Hours</h3>
-            <div class="working-hours">
-              We work 7 days a week, every day excluding major holidays. Contact us if you have an emergency, with our
-              Hotline and Contact form.
-              <br><br> Monday - Friday: <span class="text-right">10:00 - 16:00 </span>
-              <br> Saturday: <span class="text-right">12:00 - 15:00</span>
-              <br> Sunday and holidays: <span class="text-right">09:00 - 12:00</span>
+            <div class="col-md-5 newsletter-introtext">
+              <h4 class="text-white mb-0">Newsletter Sign-up</h4>
+              <p class="text-white">Latest updates and news</p>
             </div>
-          </div><!-- Col end -->
-
-          <div class="col-lg-3 col-md-6 mt-5 mt-lg-0 footer-widget">
-            <h3 class="widget-title">Services</h3>
-            <ul class="list-arrow">
-              <li><a href="service-single.html">Pre-Construction</a></li>
-              <li><a href="service-single.html">General Contracting</a></li>
-              <li><a href="service-single.html">Construction Management</a></li>
-              <li><a href="service-single.html">Design and Build</a></li>
-              <li><a href="service-single.html">Self-Perform Construction</a></li>
-            </ul>
-          </div><!-- Col end -->
-        </div><!-- Row end -->
-      </div><!-- Container end -->
-    </div><!-- Footer main end -->
-
-    {% comment %} <div class="copyright">
-      <div class="container">
-        <div class="row align-items-center">
-          <div class="col-md-6">
-            <div class="copyright-info">
-              <span>Copyright &copy; <script>
-                  document.write(new Date().getFullYear())
-                </script>, Designed &amp; Developed by <a href="https://themefisher.com">Themefisher</a></span>
+            <div class="col-md-7 newsletter-form">
+              <form action="#" method="post">
+                <div class="form-group">
+                  <label for="newsletter-email" class="content-hidden">Newsletter Email</label>
+                  <input type="email"
+                         name="email"
+                         id="newsletter-email"
+                         class="form-control form-control-lg"
+                         placeholder="Your your email and hit enter"
+                         autocomplete="off">
+                </div>
+              </form>
             </div>
           </div>
-
-          <div class="col-md-6">
-            <div class="footer-menu text-center text-md-right">
-              <ul class="list-unstyled">
-                <li><a href="about.html">About</a></li>
-                <li><a href="team.html">Our people</a></li>
-                <li><a href="faq.html">Faq</a></li>
-                <li><a href="news-left-sidebar.html">Blog</a></li>
-                <li><a href="pricing.html">Pricing</a></li>
-              </ul>
-            </div>
-          </div>
-        </div><!-- Row end -->
-
-        <div id="back-to-top" data-spy="affix" data-offset-top="10" class="back-to-top position-fixed">
-          <button class="btn btn-primary" title="Back to Top">
-            <i class="fa fa-angle-double-up"></i>
-          </button>
+          <!-- Newsletter end -->
         </div>
-
-      </div><!-- Container end -->
-    </div><!-- Copyright end --> {% endcomment %}
-  </footer><!-- Footer end -->
-  {% endblock %}
+        <!-- Col end -->
+      </div>
+      <!-- Content row end -->
+    </div>
+    <!--/ Container end -->
+  </section>
+  <!--/ subscribe end -->
+  {% block footer %}
+    {% include "includes/footer.html" %}
+  {% endblock footer %}
+  <!-- Footer end -->
+{% endblock %}

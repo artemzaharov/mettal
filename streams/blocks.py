@@ -27,3 +27,28 @@ class HeaderBlock(blocks.StructBlock):
         template = 'streams/header_block.html'
         icon = "edit"
         label = "Верхний блок" 
+
+class FooterBlock(blocks.StructBlock):
+
+    about_us_title = blocks.CharBlock(required=True, help_text='Заголовок о нас')
+    about_us_text = blocks.RichTextBlock(required=True, help_text='Текст о нас')
+    work_time_title = blocks.CharBlock(required=True, help_text='Заголовок график работы')
+    work_time_text = blocks.RichTextBlock(required=True, help_text='Текст график работы')
+    services_title = blocks.CharBlock(required=True, help_text='Заголовок услуги')
+    services_text = blocks.RichTextBlock(required=True, help_text='Текст услуги')
+
+
+    class Meta:  # noqa
+        template = 'streams/footer_block.html'
+        icon = "edit"
+        label = "Нижний блок"
+
+class MetallBlock(blocks.StructBlock):
+
+    title = blocks.CharBlock(required=True, help_text='Заголовок')
+    text = blocks.RichTextBlock(required=True, help_text='Текст')
+
+    class Meta:  # noqa
+        template = 'streams/metall_block.html'
+        icon = "edit"
+        label = "Блок цена на металл"
