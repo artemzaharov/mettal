@@ -45,7 +45,7 @@ services:
     volumes:
       - metall-db:/var/lib/postgresql/data
     ports:
-      - "5435:5435"
+      - "5435:5432"
     restart: unless-stopped
     deploy:
       resources:
