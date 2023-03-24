@@ -45,10 +45,79 @@ class FooterBlock(blocks.StructBlock):
 
 class MetallBlock(blocks.StructBlock):
 
-    title = blocks.CharBlock(required=True, help_text='Заголовок')
-    text = blocks.RichTextBlock(required=True, help_text='Текст')
+    title = blocks.CharBlock(required=True, help_text='Вид метала')
+    text = blocks.RichTextBlock(required=True, help_text='Металл - Цена')
 
     class Meta:  # noqa
         template = 'streams/metall_block.html'
         icon = "edit"
         label = "Блок цена на металл"
+
+class ReviewsBlock(blocks.StructBlock):
+
+    title = blocks.RichTextBlock(required=True, help_text='Заголовок Отзывы')
+    text = blocks.RichTextBlock(required=True, help_text='Текст')
+    image1 = ImageChooserBlock(required=False, help_text='Добавить изображение')
+    image2 = ImageChooserBlock(required=False, help_text='Добавить изображение')
+    image3 = ImageChooserBlock(required=False, help_text='Добавить изображение')
+
+    class Meta:  # noqa
+        template = 'streams/reviews_block.html'
+        icon = "edit"
+        label = "Блок отзывы"
+    
+class BigTitleBlock(blocks.StructBlock):
+
+    title_thin = blocks.RichTextBlock(required=True, help_text='Заголовок тонкий')
+    title_fat = blocks.RichTextBlock(required=True, help_text='Заголовок жирный')
+
+    class Meta:  # noqa
+        template = 'streams/big_title_block.html'
+        icon = "edit"
+        label = "Большой заголовок"
+
+
+class CallLineBlock(blocks.StructBlock):
+
+    title = blocks.RichTextBlock(required=True, help_text='Заголовок')
+    phone = blocks.CharBlock(required=True, help_text='Номер телефона')
+    fat_text = blocks.CharBlock(required=True, help_text='Текст жирный')
+    thin_text = blocks.CharBlock(required=True, help_text='Текст тонкий')
+    
+
+    class Meta:  # noqa
+        template = 'streams/call_block.html'
+        icon = "edit"
+        label = "Блок звонок"
+
+class YandexMapBlock(blocks.StructBlock):
+
+    title = blocks.RichTextBlock(required=False, help_text='Заголовок')
+
+    class Meta:  # noqa
+        template = 'streams/yandex_map_block.html'
+        icon = "edit"
+        label = "Блок карта"
+
+class LineButtonBlock(blocks.StructBlock):
+
+    title = blocks.RichTextBlock(required=True, help_text='Заголовок')
+    button_text = blocks.CharBlock(required=True, help_text='Текст кнопки')
+    button_url = blocks.URLBlock(required=True, help_text='Ссылка кнопки')
+    
+
+    class Meta:  # noqa
+        template = 'streams/line_button_block.html'
+        icon = "edit"
+        label = "Блок линия и кнопка"
+
+class TitleTextBlock(blocks.StructBlock):
+
+    title = blocks.RichTextBlock(required=True, help_text='Заголовок')
+    text = blocks.RichTextBlock(required=True, help_text='Текст')
+    
+
+    class Meta:  # noqa
+        template = 'streams/title_text_block.html'
+        icon = "edit"
+        label = "Блок заголовок текст"

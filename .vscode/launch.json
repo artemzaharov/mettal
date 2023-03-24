@@ -19,7 +19,7 @@
                 "POSTGRES_USER": "service_user",
                 "POSTGRES_DB": "service_db",
                 "POSTGRES_HOST":"127.0.0.1",
-                "POSTGRES_PORT":"5435"
+                "POSTGRES_PORT":"5435s"
               }
         },
         {
