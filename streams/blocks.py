@@ -45,6 +45,7 @@ class FooterBlock(blocks.StructBlock):
 
 class MetallBlock(blocks.StructBlock):
 
+    english_field = blocks.CharBlock(required=True, help_text='Одно слово на английском или транслитом')
     title = blocks.CharBlock(required=True, help_text='Вид метала')
     text = blocks.RichTextBlock(required=True, help_text='Металл - Цена')
 
@@ -58,8 +59,11 @@ class ReviewsBlock(blocks.StructBlock):
     title = blocks.RichTextBlock(required=True, help_text='Заголовок Отзывы')
     text = blocks.RichTextBlock(required=True, help_text='Текст')
     image1 = ImageChooserBlock(required=False, help_text='Добавить изображение')
+    alt1 = blocks.CharBlock(required=False, help_text='Альтернативный текст 1')
     image2 = ImageChooserBlock(required=False, help_text='Добавить изображение')
+    alt2 = blocks.CharBlock(required=False, help_text='Альтернативный текст 2')
     image3 = ImageChooserBlock(required=False, help_text='Добавить изображение')
+    alt3 = blocks.CharBlock(required=False, help_text='Альтернативный текст 3')
 
     class Meta:  # noqa
         template = 'streams/reviews_block.html'

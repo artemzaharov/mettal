@@ -22,7 +22,8 @@
               <div class="info-box">
                 <div class="info-box-content">
                     <p class="info-box-title">{{ self.call_us_text }}</p>
-                    <p class="info-box-subtitle">{{ self.call_us_number }}</p>
+                    <p class="info-box-subtitle">
+                      <a href="tel:{{ self.call_us_number }}">{{ self.call_us_number }}</a></p>
                 </div>
               </div>
             </li>

@@ -4,30 +4,33 @@
   <div class="container">
 <div class="row">
     <div class="col-lg-4 mt-5 mt-lg-0">
-      <h3 class="column-title mrt-0">Отзывы</h3>
+      <h3 class="column-title mrt-0">{{ self.title }}</h3>
       <p>
-        Компании, которые занимаются металлом, могут иметь различные профили деятельности, в зависимости от того, какой вид металла они производят или обрабатывают. Например, некоторые компании могут заниматься добычей и производством металлических руд, тогда как другие могут специализироваться на переработке металлических материалов, таких как сталь, алюминий или медь.
+        {{ self.text }}
       </p>
     </div>
     <div class="col-lg-8">
       <div id="page-slider" class="page-slider small-bg">
         <div class="item">
+          {% image self.image1 original as img1 %}
           <img loading="lazy"
                class="img-fluid"
-               src=""
-               alt="Отзывы вывоз лома Санкт-Петербург"/>
+               src="{{ img1.url }}"
+               alt="{{ self.alt1 }}"/>
         </div>
         <div class="item">
+          {% image self.image2 original as img2 %}
           <img loading="lazy"
                class="img-fluid"
-               src=""
-               alt="Покупка цветного металла СПБ отзывы клиентов"/>
+               src="{{ img2.url }}"
+               alt="{{ self.alt2 }}"/>
         </div>
         <div class="item">
+          {% image self.image3 original as img3 %}
           <img loading="lazy"
                class="img-fluid"    
-               src=""
-               alt="Быстрый вывоз металла 24 часа лома Санкт-Петербург"/>
+               src="{{ img3.url }}"
+               alt="{{ self.alt3 }}"/>
         </div>
       </div>
     </div>
