@@ -1,0 +1,64 @@
+{% load wagtailcore_tags wagtailimages_tags %}
+<section id="ts-features" class="ts-features pb-2">
+    <div class="container">
+      <div class="row">
+          <div class="col-lg-4 col-md-6 mb-5">
+            <div class="ts-service-box">
+                <div class="ts-service-image-wrapper">
+                {% image self.image1 original as img1 %}
+                  <img loading="lazy"  src="{{ img1.url }}" alt="{{ self.alt1 }}">
+                </div>
+                <div class="d-flex">
+                  {% comment %} <div class="ts-service-box-img">
+                      <img loading="lazy" src="images/icon-image/service-icon1.png" alt="service-icon">
+                  </div> {% endcomment %}
+                  <div class="ts-service-info">
+                      <h3 class="service-box-title"><a href="service-single.html">{{ self.title1 }}</a></h3>
+                      {% comment %} <p>{{ self.text1 }}</p> {% endcomment %}
+                      {% comment %} <a class="learn-more d-inline-block" href="service-single.html" aria-label="service-details"><i class="fa fa-caret-right"></i> Learn more</a> {% endcomment %}
+                  </div>
+                </div>
+            </div><!-- Service1 end -->
+          </div><!-- Col 1 end -->
+  
+          <div class="col-lg-4 col-md-6 mb-5">
+            <div class="ts-service-box">
+                <div class="ts-service-image-wrapper">
+                    {% image self.image2 original as img2 %}
+                  <img loading="lazy" src="{{ img2.url }}" alt="{{ self.alt2 }}">
+                </div>
+                <div class="d-flex">
+                  {% comment %} <div class="ts-service-box-img">
+                      <img loading="lazy" src="images/icon-image/service-icon2.png" alt="service-icon">
+                  </div> {% endcomment %}
+                  <div class="ts-service-info">
+                      <h3 class="service-box-title"><a href="service-single.html">{{ self.title2 }}</a></h3>
+                      {% comment %} <p>{{ self.text2 }}</p> {% endcomment %}
+                      {% comment %} <a class="learn-more d-inline-block" href="service-single.html" aria-label="service-details"><i class="fa fa-caret-right"></i> Learn more</a> {% endcomment %}
+                  </div>
+                </div>
+            </div><!-- Service2 end -->
+          </div><!-- Col 2 end -->
+  
+          <div class="col-lg-4 col-md-6 mb-5">
+            <div class="ts-service-box">
+                 <div class="ts-service-image-wrapper">
+                    {% image self.image3 original as img3 %}
+                    <img loading="lazy" src="{{ img3.url }}" alt="{{ self.alt3 }}">   
+         </div>
+                <div class="d-flex">
+                  {% comment %} <div class="ts-service-box-img">
+                    {% image self.image3 original as img3 %}
+                      <img loading="lazy" src="{{ img3.url }}" alt="{{ self.alt3 }}">
+                  </div> {% endcomment %}
+                  <div class="ts-service-info">
+                      <h3 class="service-box-title"><a href="service-single.html">{{ self.title3 }}</a></h3>
+                      {% comment %} <p>{{ self.text3 }}</p> {% endcomment %}
+                      {% comment %} <a class="learn-more d-inline-block" href="service-single.html" aria-label="service-details"><i class="fa fa-caret-right"></i> Learn more</a> {% endcomment %}
+                  </div>
+                </div>
+            </div><!-- Service3 end -->
+          </div><!-- Col 3 end -->
+      </div><!-- Content row end -->
+    </div><!-- Container end -->
+  </section>

@@ -125,3 +125,24 @@ class TitleTextBlock(blocks.StructBlock):
         template = 'streams/title_text_block.html'
         icon = "edit"
         label = "Блок заголовок текст"
+
+class HowWeBuyBlock(blocks.StructBlock):
+
+    title1 = blocks.RichTextBlock(required=False, help_text='Заголовок')
+    text1 = blocks.RichTextBlock(required=False, help_text='Текст')
+    image1 = ImageChooserBlock(required=False, help_text='Добавить изображение')
+    alt1 = blocks.CharBlock(required=False, help_text='Альтернативный текст')
+    title2 = blocks.RichTextBlock(required=False, help_text='Заголовок2')
+    text2 = blocks.RichTextBlock(required=False, help_text='Текст2')
+    image2 = ImageChooserBlock(required=False, help_text='Добавить изображение')
+    alt2 = blocks.CharBlock(required=False, help_text='Альтернативный текст2')
+    title3 = blocks.RichTextBlock(required=False, help_text='Заголовок3')
+    text3 = blocks.RichTextBlock(required=False, help_text='Текст3')
+    image3 = ImageChooserBlock(required=False, help_text='Добавить изображение')
+    alt3 = blocks.CharBlock(required=False, help_text='Альтернативный текст3')
+    
+
+    class Meta:  # noqa
+        template = 'streams/how_we_buy_block.html'
+        icon = "edit"
+        label = "Блок как мы покупаем металл"

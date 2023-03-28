@@ -76,6 +76,7 @@ class HomePage(Page):
         ('yandex_map', blocks.YandexMapBlock()),
         ('line_button', blocks.LineButtonBlock()),
         ('title_text', blocks.TitleTextBlock()),
+        ('how_we_buy', blocks.HowWeBuyBlock()),
         
     ])
 
