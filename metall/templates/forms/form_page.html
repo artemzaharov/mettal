@@ -5,116 +5,89 @@
 {% load static wagtailuserbar %}
 {% block content %}
   <div class="body-inner">
-
-
-
     {% block header %}
       {% include "includes/menu.html" %}
     {% endblock header %}
-<br>
-
-
-<form method="POST" action="{% pageurl page %}">
-
-        {% csrf_token %}
-    
-        {% for field in form %}
-          <div class="form-group">
-            {{ field.label_tag }}
-            <br>
-            {{ field }}
-            {% if field.help_text %}
-              <small class="form-text text-muted">{{ field.help_text }}</small>
-            {% endif %}
-            {% if field.errors %}
-              <div class="text-danger">
-                {% for error in field.errors %}
-                  <span>{{ error }}</span>
-                {% endfor %}
-              </div>
-            {% endif %}
-          </div>
-        {% endfor %}
-    
-        <button type="submit">Submit</button>
-      </form>
-
-
-
-
-
-
-
-{% comment %} <section id="main-container" class="main-container">
-    <div class="container">
-      <div class="row text-center">
-        <div class="col-12">
-          <h3 class="section-sub-title">{{ self.intro }}</h3>
-          <form id="contact-form" action="{% pageurl page %}" method="POST">
-            <div class="error-container"></div>
-            <div class="row">
-            <div class="col-md-10">
-            <div class="form-group">
-            {% csrf_token %}
-            {{ form.as_p }}
-        </div>
-    </div>
-    </div>
-            <button class="btn btn-primary solid blank" type="submit">Отправить</button>
-        </form>
+    <br>
+    {% comment %} <div class="container">
+      <div class="row text-left">
+        <div class="col-10">
+          {{ self.intro|richtext }}
         </div>
       </div>
     </div>
-  </section>
+
+    <div class="container">
+      <div class="row text-left">
+        <div class="col-12">
+    <form id="contact-form" method="POST" action="{% pageurl page %}">
+      {% csrf_token %}
+      {% for field in form %}
+        <div class="form-group">
+
+          {{ field.label_tag }}
+          <br>
+          {{ field }}
+          
+          {% if field.help_text %}<small class="form-text text-muted">{{ field.help_text }}</small>{% endif %}
+          {% if field.errors %}
+            <div class="text-danger">
+              {% for error in field.errors %}<span>{{ error }}</span>{% endfor %}
+            </div>
+          {% endif %}
+        </div>
+      {% endfor %}
+      <button class="btn btn-primary solid blank" type="submit">Отправить</button>
+    </form>
+  </div>
+</div>
+</div>
 <br> {% endcomment %}
 
+<section id="main-container" class="main-container">
+  <div class="container">
 
-{% comment %} <div class="row">
-    <div class="col-md-12">
-      <h3 class="column-title">We love to hear</h3>
-      <!-- contact form works with formspree.io  -->
-      <!-- contact form activation doc: https://docs.themefisher.com/constra/contact-form/ -->
-      <form id="contact-form" action="#" method="post" role="form">
-        <div class="error-container"></div>
-        <div class="row">
-          <div class="col-md-4">
+    <div class="row">
+
+      <div class="col-lg-6">
+
+        <br>
+
+        {{ self.intro|richtext }}
+
+        
+      </div>
+      <div class="col-lg-6">
+     
+        <form id="contact-form" method="POST" action="{% pageurl page %}">
+          {% csrf_token %}
+          {% for field in form %}
             <div class="form-group">
-              <label>Name</label>
-              <input class="form-control form-control-name" name="name" id="name" placeholder="" type="text" required="">
+    
+              <h4>{{ field.label_tag }}</h4>
+              
+              {{ field }}
+              
+              {% if field.help_text %}<small class="form-text text-muted">{{ field.help_text }}</small>{% endif %}
+              {% if field.errors %}
+                <div class="text-danger">
+                  {% for error in field.errors %}<span>{{ error }}</span>{% endfor %}
+                </div>
+              {% endif %}
             </div>
-          </div>
-          <div class="col-md-4">
-            <div class="form-group">
-              <label>Email</label>
-              <input class="form-control form-control-email" name="email" id="email" placeholder="" type="email" required="">
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="form-group">
-              <label>Subject</label>
-              <input class="form-control form-control-subject" name="subject" id="subject" placeholder="" required="">
-            </div>
-          </div>
-        </div>
-        <div class="form-group">
-          <label>Message</label>
-          <textarea class="form-control form-control-message" name="message" id="message" placeholder="" rows="10" required=""></textarea>
-        </div>
-        <div class="text-right"><br>
-          <button class="btn btn-primary solid blank" type="submit">Send Message</button>
-        </div>
-      </form>
-    </div>
-
-  </div>
- {% endcomment %}
+          {% endfor %}
+          <button class="btn btn-primary solid blank" type="submit">Отправить</button>
+        </form>
+      </div>
+    </div><!-- Content row 1 -->
+  </div><!-- Container end -->
+</section><!-- Main container end -->
+<br>
 
 
-
-
-  <!-- Service end -->
-  {% block footer %}
-    {% include "includes/footer.html" %}
-  {% endblock footer %}
+   
+<!-- Service end -->
+{% block footer %}
+  {% include "includes/footer.html" %}
+{% endblock footer %}
 {% endblock %}
-

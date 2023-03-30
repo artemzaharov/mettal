@@ -11,7 +11,8 @@ from wagtail.fields import RichTextField
 from wagtail.contrib.forms.models import AbstractEmailForm, AbstractFormField
 
 from home.models import Menu, Header, Footer
-
+from .views import sent_telegram
+import json
 
 class FormField(AbstractFormField):
     page = ParentalKey('FormPage', on_delete=models.CASCADE,
@@ -51,3 +52,15 @@ class FormPage(AbstractEmailForm):
             FieldPanel('subject'),
         ], "Email"),
     ]
+
+    def process_form_submission(self, form):
+       
+        json_str = json.dumps(form.cleaned_data)
+        json_data = json.loads(json_str)
+        json_data = json_data.values()
+        values_str = ', \n'.join(list(json_data))
+        sent_telegram(values_str)
+        return self.get_submission_class().objects.create(
+            form_data=form.cleaned_data,
+            page=self
+        )
