@@ -6,8 +6,8 @@ from datetime import datetime
 
 
 def sent_telegram(text: str):
-    TOKEN = "1756029562:AAH3F4kVnd2mugso-h89Urepi1JVDE8LNwg"
-    chat_id = "505383004"
+    TOKEN = "6297936343:AAFjqRlTyyaKmX2p2SBrNx6RUSkYmA3mGdE"
+    chat_id = "6102172794"
     now = str(datetime.now())
     message =  now + "\n" + text
     url = f"https://api.telegram.org/bot{TOKEN}/sendMessage?chat_id={chat_id}&text={message}"

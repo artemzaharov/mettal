@@ -108,6 +108,8 @@ class LineButtonBlock(blocks.StructBlock):
     title = blocks.RichTextBlock(required=True, help_text='Заголовок')
     button_text = blocks.CharBlock(required=True, help_text='Текст кнопки')
     button_url = blocks.URLBlock(required=True, help_text='Ссылка кнопки')
+    button_text2 = blocks.CharBlock(required=True, help_text='Текст кнопки2')
+    button_url2 = blocks.URLBlock(required=True, help_text='Ссылка кнопки2')
     
 
     class Meta:  # noqa
@@ -119,6 +121,8 @@ class TitleTextBlock(blocks.StructBlock):
 
     title = blocks.RichTextBlock(required=True, help_text='Заголовок')
     text = blocks.RichTextBlock(required=True, help_text='Текст')
+    title2 = blocks.RichTextBlock(required=True, help_text='Заголовок2')
+    text2 = blocks.RichTextBlock(required=True, help_text='Текст2')
     
 
     class Meta:  # noqa
@@ -146,3 +150,4 @@ class HowWeBuyBlock(blocks.StructBlock):
         template = 'streams/how_we_buy_block.html'
         icon = "edit"
         label = "Блок как мы покупаем металл"
+

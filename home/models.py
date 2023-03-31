@@ -5,6 +5,7 @@ from wagtail.snippets.models import register_snippet
 from streams import blocks
 from wagtail.admin.panels import FieldPanel, StreamFieldPanel
 from wagtail.images.blocks import ImageChooserBlock
+from wagtail.core.fields import RichTextField
 
 
 
@@ -63,7 +64,7 @@ class HomePage(Page):
         'Footer', on_delete=models.SET_NULL, null=True, blank=True, related_name='+'
     )
 
-    
+    main_title = RichTextField(blank=True, help_text="Основной заголовок домашней страницы" )
 
     metall = StreamField([
         ('metall', blocks.MetallBlock())
@@ -85,6 +86,7 @@ class HomePage(Page):
         FieldPanel("header"),
         FieldPanel("menu"),
         FieldPanel("footer"),
+        FieldPanel("main_title"),
         FieldPanel("metall"),
         FieldPanel("content"),
         

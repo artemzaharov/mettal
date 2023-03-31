@@ -9,40 +9,7 @@
       {% include "includes/menu.html" %}
     {% endblock header %}
     <br>
-    {% comment %} <div class="container">
-      <div class="row text-left">
-        <div class="col-10">
-          {{ self.intro|richtext }}
-        </div>
-      </div>
-    </div>
-
-    <div class="container">
-      <div class="row text-left">
-        <div class="col-12">
-    <form id="contact-form" method="POST" action="{% pageurl page %}">
-      {% csrf_token %}
-      {% for field in form %}
-        <div class="form-group">
-
-          {{ field.label_tag }}
-          <br>
-          {{ field }}
-          
-          {% if field.help_text %}<small class="form-text text-muted">{{ field.help_text }}</small>{% endif %}
-          {% if field.errors %}
-            <div class="text-danger">
-              {% for error in field.errors %}<span>{{ error }}</span>{% endfor %}
-            </div>
-          {% endif %}
-        </div>
-      {% endfor %}
-      <button class="btn btn-primary solid blank" type="submit">Отправить</button>
-    </form>
-  </div>
-</div>
-</div>
-<br> {% endcomment %}
+  
 
 <section id="main-container" class="main-container">
   <div class="container">
@@ -55,7 +22,12 @@
 
         {{ self.intro|richtext }}
 
-        
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+          <strong>Внимание!</strong> Отправляя форму вы автоматически соглшайтесь с обработкой персоональных данных.
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
       </div>
       <div class="col-lg-6">
      

@@ -1,1 +1,55 @@
-Thanks
+{% extends "base.html" %}
+{% load static %}
+{% load i18n wagtailimages_tags %}
+{% load i18n wagtailcore_tags %}
+{% load static wagtailuserbar %}
+{% block content %}
+  <div class="body-inner">
+    {% block header %}
+      {% include "includes/menu.html" %}
+    {% endblock header %}
+    <br>
+  
+
+<section id="main-container" class="main-container">
+  <div class="container">
+
+    <div class="row">
+
+      <div class="col-lg-6">
+
+        <br>
+
+        <div class="widget">
+            <div class="quote-item quote-border">
+              <div class="quote-text-border">
+                {{ self.thank_you_text|richtext }}
+              </div>
+
+              <div class="quote-item-footer">
+                {% comment %} <img loading="lazy" class="testimonial-thumb" src="images/clients/testimonial1.png" alt="testimonial"> {% endcomment %}
+                <div class="quote-item-info">
+                  <h3 class="quote-author">Андрей Джабраилов - руководитель отдела логистики</h3>
+                  {% comment %} <span class="quote-subtext">CEO, First Choice Group</span> {% endcomment %}
+                </div>
+              </div>
+            </div><!-- Quote item end -->
+<br>
+<br>
+<br>
+<br>
+<br>
+
+          </div><!-- Widget end -->
+    </div><!-- Content row 1 -->
+  </div><!-- Container end -->
+</section><!-- Main container end -->
+<br>
+
+
+   
+<!-- Service end -->
+{% block footer %}
+  {% include "includes/footer.html" %}
+{% endblock footer %}
+{% endblock %}
