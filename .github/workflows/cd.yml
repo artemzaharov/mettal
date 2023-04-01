@@ -26,7 +26,7 @@ jobs:
         passphrase: ${{ secrets.PASSPHRASE }}
         port: 22
         script: |
-          cd /root/metall
+          cd metall
           git pull origin main
           git status
           docker compose down
