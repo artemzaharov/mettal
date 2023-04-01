@@ -30,4 +30,5 @@ jobs:
           git pull origin main
           git status
           docker compose down
+          docker compose build
           docker compose up -d
