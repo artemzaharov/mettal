@@ -60,3 +60,4 @@ RUN python manage.py collectstatic --noinput --clear
 RUN python manage.py makemigrations;
 RUN python manage.py makemigrations home forms;
 CMD set -xe; python manage.py migrate --noinput; gunicorn   --bind 0.0.0.0:80  metall.wsgi:application
+ 
