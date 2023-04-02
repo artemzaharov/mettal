@@ -22,6 +22,7 @@ services:
       POSTGRES_DB:  service_db
       POSTGRES_HOST: postgresdb
       POSTGRES_PORT: 5432
+      DJANGO_SETTINGS_MODULE: metall.settings.production
     # command: "gunicorn  --bind 0.0.0.0:80 metall.wsgi:application"
     volumes:
       - "./media:/app/media"
