@@ -41,7 +41,7 @@ WORKDIR /app
 
 # Copy the source code of the project into the container.
 COPY  . .
-
+ENV  DJANGO_SETTINGS_MODULE=metall.settings.production
 # Use user "wagtail" to run the build commands below and the server itself.
 # USER wagtail
 
