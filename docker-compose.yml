@@ -26,6 +26,8 @@ services:
     volumes:
       - "./media:/app/media"
       - "./static:/app/static"
+      - "./home/migrations:/app/home/migrations"
+      - "./forms/migrations:/app/forms/migrations"
     networks:
           - application
 
