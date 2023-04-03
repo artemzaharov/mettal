@@ -91,3 +91,37 @@ class HomePage(Page):
         FieldPanel("content"),
         
     ]
+
+class UniversalPage(Page):
+    header = models.ForeignKey(
+        'Header', on_delete=models.SET_NULL, null=True, blank=True, related_name='+'
+    )
+    menu = models.ForeignKey(
+        'Menu', on_delete=models.SET_NULL, null=True, blank=True, related_name='+'
+    )
+    footer = models.ForeignKey(
+        'Footer', on_delete=models.SET_NULL, null=True, blank=True, related_name='+'
+    )
+
+    main_title = RichTextField(blank=True, help_text="Основной заголовок домашней страницы" )
+
+    content = StreamField([
+        ('review', blocks.ReviewsBlock()),
+        ('big_title', blocks.BigTitleBlock()),
+        ('call_line', blocks.CallLineBlock()),
+        ('yandex_map', blocks.YandexMapBlock()),
+        ('line_button', blocks.LineButtonBlock()),
+        ('title_text', blocks.TitleTextBlock()),
+        ('how_we_buy', blocks.HowWeBuyBlock()),
+        
+    ])
+
+  
+    content_panels = Page.content_panels + [
+        FieldPanel("header"),
+        FieldPanel("menu"),
+        FieldPanel("footer"),
+        FieldPanel("main_title"),
+        FieldPanel("content"),
+        
+    ]
