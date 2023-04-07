@@ -72,8 +72,8 @@ class ReviewsBlock(blocks.StructBlock):
     
 class BigTitleBlock(blocks.StructBlock):
 
-    title_thin = blocks.RichTextBlock(required=True, help_text='Заголовок тонкий')
-    title_fat = blocks.RichTextBlock(required=True, help_text='Заголовок жирный')
+    title_thin = blocks.RichTextBlock(required=False, help_text='Заголовок тонкий')
+    title_fat = blocks.RichTextBlock(required=False, help_text='Заголовок жирный')
 
     class Meta:  # noqa
         template = 'streams/big_title_block.html'
