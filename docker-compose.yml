@@ -67,7 +67,7 @@ services:
             - ./proxy/nginx.conf:/etc/nginx/conf.d/default.conf
             - ./media:/media
             - ./sert:/sert
-            - ./favicon.ico
+            - ./favicon:/favicon.ico
         depends_on:
             - db
             - server
