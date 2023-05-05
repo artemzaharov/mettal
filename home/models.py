@@ -103,7 +103,7 @@ class UniversalPage(Page):
         'Footer', on_delete=models.SET_NULL, null=True, blank=True, related_name='+'
     )
 
-    main_title = RichTextField(blank=True, help_text="Основной заголовок домашней страницы" )
+    main_title = RichTextField(blank=True, help_text="Основной заголовок универсальной страницы" )
 
     content = StreamField([
         ('review', blocks.ReviewsBlock()),
