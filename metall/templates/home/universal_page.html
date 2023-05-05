@@ -5,26 +5,26 @@
 {% load static wagtailuserbar %}
 {% block content %}
   <div class="body-inner">
-
-
-
     {% block header %}
       {% include "includes/menu.html" %}
     {% endblock header %}
-<br>
-
-
-
-
-
+    <br>
+    <section id="main-container" class="main-container">
+      <div class="container">
+        <div class="row text-center">
+          <div class="col-12">
+            <br>
+            {{ self.main_title|richtext }}
+          </div>
+        </div>
+        <div class="accordion accordion-group" id="our-values-accordion"></div>
+      </div>
+    </section>
     {% for block in page.content %}
-    {% include_block block %}
+      {% include_block block %}
     {% endfor %}
-
-
-  <!-- Service end -->
-  {% block footer %}
-    {% include "includes/footer.html" %}
-  {% endblock footer %}
-{% endblock %}
-
+    <!-- Service end -->
+    {% block footer %}
+      {% include "includes/footer.html" %}
+    {% endblock footer %}
+  {% endblock %}
