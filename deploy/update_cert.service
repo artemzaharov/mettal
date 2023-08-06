@@ -1,0 +1,6 @@
+# Содержимое файла /etc/systemd/system/certbot-renewal.service
+[Unit]
+Description=Certbot Renewal
+
+[Service]
+ExecStart=/usr/bin/bash /metall/deploy/update_cert.sh
